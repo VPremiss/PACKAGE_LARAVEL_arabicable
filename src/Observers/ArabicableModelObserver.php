@@ -51,6 +51,12 @@ class ArabicableModelObserver
     {
         $model->{ar_with_harakat($key)} = ArabicFilter::withHarakat($value);
         $model->{ar_searchable($key)} = ArabicFilter::forSearch($value);
-        $model->{$key} = ArabicFilter::withoutHarakat($value);
+        if (config('arabicable.spatie_translatable_integration')) {
+            $existing = (array) $model->getAttribute($key);
+            $existing['ar'] = ArabicFilter::withoutHarakat($value);
+            $model->{$key} = $existing;
+        } else {
+            $model->{$key} = ArabicFilter::withoutHarakat($value);
+        }
     }
 }

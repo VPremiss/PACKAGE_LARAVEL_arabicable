@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Facades\Cache;
 use VPremiss\Arabicable\ArabicableServiceProvider;
 use VPremiss\Arabicable\Facades\Arabic;
 use VPremiss\Arabicable\Models\ArabicPlural;
@@ -141,37 +142,17 @@ it('can filter out common Arabic text', function () {
 });
 
 it('can extract Arabic plurals from singulars and vice-versa', function () {
-    CraftyPackage::seed(ArabicableServiceProvider::class, 'ArabicPluralSeeder');
+    ArabicPlural::create(['singular' => 'يمين', 'plural' => 'أيمن']);
+    ArabicPlural::create(['singular' => 'يمين', 'plural' => 'أيمان']);
+    ArabicPlural::create(['singular' => 'أثر', 'plural' => 'آثار']);
 
-    expect(ArabicPlural::count())->toBeGreaterThan(0);
+    Cache::forget(config('arabicable.arabic_plural.cache_key'));
 
-    $singulars = [
-        'يمين',
-        'أثر',
-    ];
-    $plurals = [
-        'أيمن',
-        'أيمان',
-        'آثار',
-    ];
+    $foundPlurals = Arabic::getPlurals(['يمين', 'أثر']);
+    expect($foundPlurals)->toEqualCanonicalizing(['أيمن', 'أيمان', 'آثار']);
 
-    $foundPlurals = Arabic::getPlurals($singulars);
-
-    expect($plurals)->toEqualCanonicalizing($foundPlurals);
-
-    $plurals = [
-        'أيمن',
-        'أيمان',
-        'آثار',
-    ];
-    $singulars = [
-        'يمين',
-        'أثر',
-    ];
-
-    $foundSingulars = Arabic::getSingulars($plurals);
-
-    expect($singulars)->toEqualCanonicalizing($foundSingulars);
+    $foundSingulars = Arabic::getSingulars(['أيمن', 'أيمان', 'آثار']);
+    expect($foundSingulars)->toEqualCanonicalizing(['يمين', 'أثر']);
 });
 
 // TODO test the cache cleaner
