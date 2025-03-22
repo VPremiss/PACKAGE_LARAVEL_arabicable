@@ -1,8 +1,8 @@
 /.phpunit.cache
 /build
-/node_modules
 /vendor
 /.drafts
 composer.lock
 phpunit.xml
 phpstan.neon
+composer.lock

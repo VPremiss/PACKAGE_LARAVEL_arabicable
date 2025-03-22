@@ -37,7 +37,11 @@ Finally, take a look at the list of offered methods below (the [API](#API) secti
    php artisan arabicable:install
    ```
 
+</div>
+
 >[!NOTE]The config file as well as the migration table will be published automatically.
+
+<div align="left">
 
 ### Upgrading
 
@@ -116,9 +120,15 @@ Alright, so let's imagine we have `Note`(s) and we want to have their `content` 
   // قال المزني سالت الشافعي عن مسالة في الكلام فقال سلني عن شيء اذا اخطات فيه قلت اخطات ولا تسالني عن شيء اذا اخطات فيه قلت كفرت
   ```
 
+</div>
+
 >[!NOTE]<br>Notice how we can use the global helper functions (`ar_with_harakat`, `ar_searchable`, and `ar_indian`) to get the corresponding property name quickly.
 
 > [!IMPORTANT]<br>A validation method is employed during text processing to ensure that the text is free of punctuation anomalies that could impact spacing adjustments.
+
+<div align="left">
+
+- What if you wanted to use Spatie's Laravel Translatable package? Well, you can'- haha! Of course you can! Just turn the last `spatie_translatable_integration` configuration on, and we've GOT you covered... Just don't forget to use the package the way it was designed to, while saving those models, that is.
 
 ### Common Arabic Text
 

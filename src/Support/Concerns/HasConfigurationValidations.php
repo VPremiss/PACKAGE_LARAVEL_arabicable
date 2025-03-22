@@ -198,4 +198,13 @@ trait HasConfigurationValidations
             );
         }
     }
+
+    protected function validateSpatieTranslatableIntegrationConfig($value): void
+    {
+        if (!is_bool($value)) {
+            throw new ConfiguratedValidatedConfigurationException(
+                'The boolean configuration for spatie translatable integration is not found!'
+            );
+        }
+    }
 }

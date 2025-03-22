@@ -70,14 +70,10 @@ trait HandlesNumerals
     public function deduplicateArabicAndIndianNumeralSequences(string $text): string
     {
         $pattern = "/\d+|[\x{0660}-\x{0669}]+/u";
-
         preg_match_all($pattern, $text, $matches);
 
-        if (!empty($matches)) {
-            $numbers = implode(' ', $matches[0]);
-
-            $uniqueNumbers = implode(' ', array_unique(explode(' ', $numbers)));
-
+        if (!empty($matches[0])) {
+            $uniqueNumbers = implode(' ', array_unique($matches[0]));
             $text = preg_replace($pattern, '', $text);
             $text = trim($text) . ' ' . $uniqueNumbers;
         }
