@@ -28,10 +28,11 @@ trait HasArabicableMigrationBlueprintMacros
             $isNullable = false,
             $isUnique = false,
             $supportsFullSearch = false,
+            ?bool $isTranslatable = null,
         ) {
             $supportsFullSearch = app()->environment('testing') ? false : $supportsFullSearch;
 
-            if (config('arabicable.spatie_translatable_integration')) {
+            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->string($columnName, $length);
@@ -54,10 +55,11 @@ trait HasArabicableMigrationBlueprintMacros
             $isNullable = false,
             $isUnique = false,
             $supportsFullSearch = false,
+            ?bool $isTranslatable = null,
         ) {
             $supportsFullSearch = app()->environment('testing') ? false : $supportsFullSearch;
-            
-            if (config('arabicable.spatie_translatable_integration')) {
+
+            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->tinyText($columnName);
@@ -75,8 +77,13 @@ trait HasArabicableMigrationBlueprintMacros
             return $this;
         });
 
-        Blueprint::macro('arabicText', function (string $columnName, $isNullable = false, $isUnique = false) {
-            if (config('arabicable.spatie_translatable_integration')) {
+        Blueprint::macro('arabicText', function (
+            string $columnName,
+            $isNullable = false,
+            $isUnique = false,
+            ?bool $isTranslatable = null,
+        ) {
+            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->text($columnName);
@@ -94,8 +101,13 @@ trait HasArabicableMigrationBlueprintMacros
             return $this;
         });
 
-        Blueprint::macro('arabicMediumText', function (string $columnName, $isNullable = false, $isUnique = false) {
-            if (config('arabicable.spatie_translatable_integration')) {
+        Blueprint::macro('arabicMediumText', function (
+            string $columnName,
+            $isNullable = false,
+            $isUnique = false,
+            ?bool $isTranslatable = null,
+        ) {
+            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->mediumText($columnName);
@@ -113,8 +125,13 @@ trait HasArabicableMigrationBlueprintMacros
             return $this;
         });
 
-        Blueprint::macro('arabicLongText', function (string $columnName, $isNullable = false, $isUnique = false) {
-            if (config('arabicable.spatie_translatable_integration')) {
+        Blueprint::macro('arabicLongText', function (
+            string $columnName,
+            $isNullable = false,
+            $isUnique = false,
+            ?bool $isTranslatable = null,
+        ) {
+            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->longText($columnName);

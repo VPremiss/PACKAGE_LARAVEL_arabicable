@@ -142,6 +142,8 @@ return [
      | contain without harakat in its 'ar' key, however, there is room then
      | for the rest of the locales'.
      |
+     | You can still override this for specific fields using `$isTranslatable`.
+     |
      */
 
     'spatie_translatable_integration' => false,
