@@ -32,7 +32,7 @@ trait HasArabicableMigrationBlueprintMacros
         ) {
             $supportsFullSearch = app()->environment('testing') ? false : $supportsFullSearch;
 
-            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
+            if ($isTranslatable) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->string($columnName, $length);
@@ -59,7 +59,7 @@ trait HasArabicableMigrationBlueprintMacros
         ) {
             $supportsFullSearch = app()->environment('testing') ? false : $supportsFullSearch;
 
-            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
+            if ($isTranslatable) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->tinyText($columnName);
@@ -83,7 +83,7 @@ trait HasArabicableMigrationBlueprintMacros
             $isUnique = false,
             ?bool $isTranslatable = null,
         ) {
-            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
+            if ($isTranslatable) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->text($columnName);
@@ -107,7 +107,7 @@ trait HasArabicableMigrationBlueprintMacros
             $isUnique = false,
             ?bool $isTranslatable = null,
         ) {
-            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
+            if ($isTranslatable) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->mediumText($columnName);
@@ -131,7 +131,7 @@ trait HasArabicableMigrationBlueprintMacros
             $isUnique = false,
             ?bool $isTranslatable = null,
         ) {
-            if ($isTranslatable ?? config('arabicable.spatie_translatable_integration')) {
+            if ($isTranslatable) {
                 $field = $this->json($columnName);
             } else {
                 $field = $this->longText($columnName);

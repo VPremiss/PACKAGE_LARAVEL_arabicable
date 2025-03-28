@@ -132,20 +132,4 @@ return [
         'cache_key' => 'arabic_plurals',
     ],
 
-    /*
-     |--------------------------------------------------------------------------
-     | Spatie Translatable integration (bool)
-     |--------------------------------------------------------------------------
-     |
-     | Whether to turn the default migrations that hold content without harakat
-     | into Spatie Translatable package compatible JSON field. It will still
-     | contain without harakat in its 'ar' key, however, there is room then
-     | for the rest of the locales'.
-     |
-     | You can still override this for specific fields using `$isTranslatable`.
-     |
-     */
-
-    'spatie_translatable_integration' => false,
-
 ];

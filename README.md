@@ -128,7 +128,7 @@ Alright, so let's imagine we have `Note`(s) and we want to have their `content` 
 
 <div align="left">
 
-- What if you wanted to use Spatie's Laravel Translatable package? Well, you can'- haha! Of course you can! Just turn the last `spatie_translatable_integration` configuration on, and we've GOT you covered... Just don't forget to use the package the way it was designed to, while saving those models, that is.
+- What if you wanted to use [Spatie's Laravel Translatable](https://github.com/spatie/laravel-translatable) package? Well, you can'- haha! Of course you can! Just provide `$isTranslatable` with `true` value to the any Arabicable migration macro you're dealing with and you're good to go. Just don't forget to use the package the way it was designed to, while saving those models, that is.
 
 ### Common Arabic Text
 

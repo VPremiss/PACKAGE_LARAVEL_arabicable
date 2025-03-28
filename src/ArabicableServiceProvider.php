@@ -79,7 +79,6 @@ class ArabicableServiceProvider extends PackageServiceProvider implements Instal
                     'factory' => fn ($value) => $this->validateArabicPluralFactoryConfig($value),
                     'cache_key' => fn ($value) => $this->validateArabicPluralCacheKeyConfig($value),
                 ],
-                'spatie_translatable_integration' => fn ($value) => $this->validateSpatieTranslatableIntegrationConfig($value),
             ],
         ];
     }
