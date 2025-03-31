@@ -52,10 +52,9 @@ class ArabicableModelObserver
         $model->{ar_with_harakat($key)} = ArabicFilter::withHarakat($value);
         $model->{ar_searchable($key)} = ArabicFilter::forSearch($value);
 
-        // ? When using Spatie Translatable
-        $isJson = in_array($key, $model->getCasts()) && $model->getCasts()[$key] === 'array';
+        $usingSpatieTranslatable = in_array($key, $model->getCasts()) && $model->getCasts()[$key] === 'array';
 
-        if ($isJson) {
+        if ($usingSpatieTranslatable) {
             $existing = (array) $model->getAttribute($key);
             $existing['ar'] = ArabicFilter::withoutHarakat($value);
             $model->{$key} = $existing;
