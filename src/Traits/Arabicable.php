@@ -17,6 +17,12 @@ trait Arabicable
     {
         $translations = [];
 
+        if (! isset($this->translatable)) {
+            throw new \VPremiss\Arabicable\Support\Exceptions\ArabicableException(
+                'Please implement Spatie Laravel Tanslatable\'s property $translatable on the model before using getSearchableTranslations helper.',
+            );
+        }
+
         foreach ($this->translatable as $property) {
             foreach ($this->$property as $locale => $value) {
                 $searchableLabel = ar_searchable($property);

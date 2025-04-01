@@ -32,6 +32,8 @@
     28 => 'Orchestra\\Canvas\\LaravelServiceProvider',
     29 => 'Orchestra\\Canvas\\Core\\LaravelServiceProvider',
     30 => 'Pest\\Laravel\\PestServiceProvider',
+    31 => 'VPremiss\\Crafty\\CraftyServiceProvider',
+    32 => 'VPremiss\\Arabicable\\ArabicableServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,6 +52,8 @@
     12 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     13 => 'Termwind\\Laravel\\TermwindServiceProvider',
     14 => 'Pest\\Laravel\\PestServiceProvider',
+    15 => 'VPremiss\\Crafty\\CraftyServiceProvider',
+    16 => 'VPremiss\\Arabicable\\ArabicableServiceProvider',
   ),
   'deferred' => 
   array (
