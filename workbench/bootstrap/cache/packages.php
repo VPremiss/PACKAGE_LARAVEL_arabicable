@@ -57,14 +57,14 @@
   ),
   'vpremiss/crafty' => 
   array (
+    'providers' => 
+    array (
+      0 => 'VPremiss\\Crafty\\CraftyServiceProvider',
+    ),
     'aliases' => 
     array (
       'Crafty' => 'VPremiss\\Crafty\\Facades\\Crafty',
       'CraftyPackage' => 'VPremiss\\Crafty\\Facades\\CraftyPackage',
-    ),
-    'providers' => 
-    array (
-      0 => 'VPremiss\\Crafty\\CraftyServiceProvider',
     ),
   ),
   'vpremiss/arabicable' => 

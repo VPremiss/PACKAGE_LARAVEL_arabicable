@@ -32,8 +32,6 @@
     28 => 'Orchestra\\Canvas\\LaravelServiceProvider',
     29 => 'Orchestra\\Canvas\\Core\\LaravelServiceProvider',
     30 => 'Pest\\Laravel\\PestServiceProvider',
-    31 => 'VPremiss\\Crafty\\CraftyServiceProvider',
-    32 => 'VPremiss\\Arabicable\\ArabicableServiceProvider',
   ),
   'eager' => 
   array (
@@ -52,8 +50,6 @@
     12 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     13 => 'Termwind\\Laravel\\TermwindServiceProvider',
     14 => 'Pest\\Laravel\\PestServiceProvider',
-    15 => 'VPremiss\\Crafty\\CraftyServiceProvider',
-    16 => 'VPremiss\\Arabicable\\ArabicableServiceProvider',
   ),
   'deferred' => 
   array (
@@ -175,6 +171,7 @@
     'migrator' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'migration.repository' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'migration.creator' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
+    'Illuminate\\Database\\Migrations\\Migrator' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'Illuminate\\Database\\Console\\Migrations\\MigrateCommand' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'Illuminate\\Database\\Console\\Migrations\\FreshCommand' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'Illuminate\\Database\\Console\\Migrations\\InstallCommand' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
